@@ -1,0 +1,337 @@
+<html>
+<head>
+<style type="text/css">
+	#question3
+	{
+		color : blue;
+	}
+    .questionContainer
+    {
+      border: 1px solid #000000;
+    }
+    .questionContainer ul
+    {
+
+    }
+    .questionContainer li
+    {
+      padding: 14px;
+    }
+	
+	 #question5
+    {
+      margin-top: 15px;
+      background-image:url('http://www.wtprsoftball.com/images/facebook_thumbnail.jpg');
+      background-repeat: no-repeat;
+    }
+	.question7bold
+	{
+		font-weight: bold;
+	}
+	.instructionContent
+	{
+	  color : #383838;
+	}
+	.theTest
+	{
+		display:none;
+	}
+	.h3
+	{
+		display:inline
+	}
+	.invisibleQuestion
+    {	
+	  filter: alpha(opacity = 40);
+	  -moz-opacity: 0.4;
+	  opacity: 0.4;
+      color: #000000;
+    }
+	.closelink
+	{ 
+	position:absolute;
+	top:0;
+	right:0;
+	text-align: right;
+	}
+	
+    div.transbox 
+	{
+    width: 500px;
+    height: 257px;
+    background-color:#F5F5DC;
+    position:relative;
+    margin-left:-250px; /* half of width */
+    margin-top:-128.5px;  /* half of height */
+    top:50%;
+    left:50%;
+    border: 3px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+	}	
+
+	div.transbox p 
+	{
+    margin: 30px 40px;
+    font-weight: bold;
+	color: #008000;
+    }
+	
+  </style>
+  <script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script>
+  <script type="text/javascript">
+    // Q: Describe what these functions do using line comments
+	// This will show an alert dialog with an OK button
+    function alertValue(value)
+    {
+      window.alert(value);
+    }
+
+	// This removes the introduction using an animation and shows the test element using another animation
+    YUI().use('transition', function (Y) {
+	var introduction = Y.one('#introduction'),
+      test = Y.one('#theTest');
+
+	Y.one('#startTest').on('click', function (e) {
+    
+    introduction.transition({
+      width: 0,
+      height: 0,
+	  opacity: 0
+    });
+    
+	test.setStyle('display', 'block').transition({
+	  opacity: 1
+		});
+	  });
+	});
+
+	//Alert box display function
+	function displayAlert()
+	{
+		window.alert("\"I've done it!\"");
+	}
+	//Function to close the transperent box
+	function boxclose()
+	{
+	var element=document.getElementById('transboxid');
+
+	 element.style.display = "none";
+	}
+  </script>
+  <title>Shapeways.com HTML Test</title>
+</head>
+<body>
+  <div id="introduction">
+    <h1>
+      Shapeways.com HTML Test
+    </h1>
+    <h2>
+      Instructions
+    </h2>
+    <p class="instructionContent">
+      Using the text-editor of your choice, make changes to this HTML document as instructed in the questions below.<br>
+      Each question will be marked with <strong>Q</strong>.<br>
+      Please modify this HTML with your answers (keep all CSS and Javascript in this file).
+      <br><br>
+      Save your test as [yourName]-test.html<br><br>
+      <a id="startTest" href="javascript:void(0);" >Click here to begin the test</a>
+    </p>
+  </div>
+  
+  <div id="theTest" class="theTest">
+	  <h2>
+		Questions
+	  </h2>
+	  <div id="questions" class="questionContainer">
+      
+	 
+      <ul>
+	   <li id="question1" class="question"><strong>Q:</strong>
+        Add this question to the unordered list shown below.
+      </li>
+        <li id="question2" style="color:blue"><strong>Q:</strong>
+       Make this question blue using an inline style.
+        </li>
+		
+        <li id="question3"><strong>Q:</strong>
+        Make sure this question has a unique id.
+        Make this question blue using an external id selector.
+        </li>
+        <li id="question4"><strong>Q:</strong>
+        <h3 style="display:inline"> Feature Question </h3><br>
+        Add a table inside this list item.<br>
+        &mdash;
+        Make 5 rows and 3 columns.<br>
+        &mdash;
+        Give the cells a width of 45px.<br>
+        &mdash;
+        Give the table a border.<br>
+        &mdash;
+        Give the middle cell a red background.<br>
+		<table border="1">
+		<tr><td style="width:45px">cell1</td><td style="width:45px">cell2</td><td style="width:45px">cell3</td></tr>
+		<tr><td style="width:45px">cell4</td><td style="width:45px">cell5</td><td style="width:45px">cell6</td></tr>
+		<tr><td style="width:45px">cell7</td><td style="width:45px ; background-color:red">cell8</td><td style="width:45px">cell9</td></tr>
+		<tr><td style="width:45px">cell10</td><td style="width:45px">cell11</td><td style="width:45px">cell12</td></tr>
+		<tr><td style="width:45px">cell13</td><td style="width:45px">cell14</td><td style="width:45px">cell115</td></tr>
+		</table>
+        </li>
+        <li id="question5"><strong>Q:</strong>
+        Create a link to the URL http://www.shapeways.com/jobs and make the link text &quot;Jobs @ Shapeways&quot;.
+        Give this question a top margin of 15px, and a background image from the internet.<br/>
+		<a href="http://www.shapeways.com/jobs"> &quot;Jobs @ Shapeways&quot </a>
+        </li>
+        <li id="question6"><strong>Q:</strong>
+          <h3> Feature Question </h3><br>
+          Create a button below this sentence.<br>
+		  <button id= "button1" onClick= "displayAlert()"> Click me!!! </button>
+          When the button is clicked, make an alert box appear that says &quot;I&#39;ve done it!&quot;<br>
+        </li>
+        <li id="question7"><strong>Q:</strong>
+		<span class="question7bold">
+          Make this question bold using css.  Use an external class selector to apply the style.
+        </span>
+		</li>
+        <li id="question8"><strong>Q:</strong>
+          Make all elements in the Instructions section dark gray (text-color #383838;) using a single css class selector.
+        </li>
+        <li id="question9"><strong>Q:</strong>
+        <span class="invisibleQuestion">
+          Make this question visible.
+        </span>
+        </li>
+        <li id="question10"><strong>Q:</strong>
+        <span>
+		 Describe the differences between the IE6, IE7, and W3C box models.<br><br>
+		In the W3C box model, the width of an element gives the width of the content of the box, excluding padding and border.<br>
+		In the traditional box model, the width of an element gives the width between the borders of the box, including padding and border.<br>
+		Internet Explorer in "quirks mode" includes the content, padding and borders within the specified width or height. <br>
+		This results in narrower or shorter boxes than the standard behavior. <br>
+        </span>
+        </li>
+        <li id="question11"><strong>Q:</strong>
+        <span>
+          Extract all inline styles in this test to external class selectors.
+        </span>
+        </li>
+        <li id="question12"><strong>Q:</strong>
+        <h3> Adventure Question </h3>
+        <ul>
+          <li>
+            Add a semi-transparent box which is centered on the screen.
+          </li>
+          <li>
+            Give the box a 3px black border.
+          </li>
+          <li>
+            Make the background of the box a light-beige.
+          </li>
+          <li>
+            Make the box 500px wide and 257px tall.
+          </li>
+          <li>
+            Include a paragraph of green sample text in the box.
+          </li>
+          <li>
+            <strong>BONUS:</strong>
+            Have a link in the top right corner which closes the box. <br><br><br><br><br><br><br><br>
+          </li>
+          </ul>
+        </li>
+		<div class="transbox" id="transboxid">
+		 
+    <p>This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.
+    </p>
+	
+	
+		<div class="closelink">
+						<button onClick="boxclose()" type="button">Close</button>
+					</div>
+  </div>
+        <li id="question13"><strong>Q:</strong>
+        <h3> Adventure Question </h3><br>
+          Change the functionality of the &quot;begin the test&quot; link:
+          <ul>
+            <li>
+              use the <strong>YUI javascript library</strong> to animate the introduction box closing.
+            </li>
+            <li>
+              use the <strong>YUI javascript library</strong> to fade the test box in.
+            </li>
+          </ul>
+        </li>
+        <li id="question14"><strong>Q:</strong>
+        <h3> Feature Question </h3><br>
+        <ol>
+        <li> Show how to include a variable in a page using PHP : <br>$var=2;</li>
+        
+		<li> Show how to loop over a collection of elements in PHP : 
+		<br>foreach (array_expression as $key => $value)<br>or 
+		<br> foreach (array_expression as $value)<br></li>
+        
+		<li> Show an IF/ELSEIF/ELSE conditional in PHP : <br>
+					if ($a > $b) { 						<br>
+				//	Do Something						<br>	
+			} elseif ($a == $b) {						<br>
+				//	Do Something else					<br>
+			} else {									<br>
+				//	Do Something different				<br>
+			} </li>
+			
+        <li> Show three ways to include content from another file in PHP : <br> 
+						1)include 'filename';<br>
+						2)require 'filename';<br>
+						3)$string = get_content('file.php');<br>
+						<br>
+						function get_content($filename) {<br>
+						    &nbsp;if (is_file($filename)) {<br>
+						        &nbsp;&nbsp;ob_start();<br>
+						        &nbsp;&nbsp;include $filename;<br>
+						        &nbsp;&nbsp;return ob_get_clean();<br>
+						    &nbsp;}<br>
+						    &nbsp;&nbsp;return false;<br>
+							}   <br>
+		</li>
+        </ol>
+        </li>
+        <li id="question15"><strong>Q:</strong>
+        <h3> Adventure Question </h3><br>
+          Describe the MVC design pattern as it applies to web servers - start from initial HTTP request and end with writing the response. <br><br>
+		  The Model handles the state of the application. It just supplies ways to query the state, and ways to change that state.<br>
+		  The View is the representation of the user interface. A view can query the model, but it is not supposed to change the state.<br>
+		  User actions on the View are send to the Controller.The Controller receives user requests, and translates them into actions that the Model should take. <br>
+		  Then it selects the appropriate View to handle the response.<br>
+		  
+		  Steps : <br>
+		  1) Browser sends a http request to a Dispatcher servelet which dispatches to an appropriate controller.<br>
+		  2) Controller queries the model.<br>
+		  3) Model returns the status to the controller.<br>
+		  4) The controller then selects a view based on the request.<br>
+		  5) The view then queries the state of the model.<br>
+		  6) The model returns the state of the model to the view.<br>
+		  7) The view returns a http response to the browser.<br>
+		  
+        </li>
+        <li id="question16"><strong>Q:</strong>
+        <h3 style="display:inline"> Feature Question </h3><br>
+          Describe the pros and cons of version control. <br>
+		  
+		 Pros:<br>
+		 1) A history is kept of all operations for better tracking.<br>
+		 2) Reverting back to older versions is easier.<br>
+		 3) Collaboration is easier in a team as all files are standardised.<br>
+		 4) Branching and merging make it easier to debug,add features,test etc<br>
+		 <br>
+		 Cons:<br>
+		 1) Steep learning curve<br>
+        </li>
+      </ul>
+	  </div>
+  </div>
+
+</body>
+</html>
